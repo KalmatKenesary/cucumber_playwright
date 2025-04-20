@@ -1,0 +1,19 @@
+{
+    "default": {
+        "formateOptions": {
+            "snippetInterface": "async-await",
+            "resultsDir": "allure-results"
+        },
+        "paths": [
+            "tests/features/*.feature"
+        ],
+        "publishQuite": true,
+        "dryRun": false,
+        "require": [
+            "tests/steps/*.js"
+        ],
+        "format": [
+            "allure-cucumberjs/reporter"
+        ]
+    }
+}
