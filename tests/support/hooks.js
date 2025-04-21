@@ -1,4 +1,4 @@
-const { BeforeAll, AfterAll, Before, After } = require('@cucumber/cucumber');
+const { BeforeAll, AfterAll, Before, After, world } = require('@cucumber/cucumber');
 const { chromium } = require('playwright');
 
 let browserInstance;
@@ -14,11 +14,11 @@ AfterAll(async () => {
 });
 
 Before(async function () {
-    this.context = await browserInstance.newContext();
-    this.page = await this.context.newPage();
+    world.context = await browserInstance.newContext();
+    world.page = await this.context.newPage();
 });
 
 After(async function () {
-    await this.page.close();
-    await this.context.close();
+    await world.page.close();
+    await world.context.close();
 })
