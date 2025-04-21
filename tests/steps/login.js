@@ -5,7 +5,7 @@ const { chromium } = require('@playwright/test');
 setDefaultTimeout(10000);
 
 Given('providing valid url', async () => {
-    world.browser = await chromium.launch({ headless: false });
+    world.browser = await chromium.launch({ headless: true });
     world.page = await world.browser.newPage();
     await world.page.goto('https://the-internet.herokuapp.com/login');
 });
