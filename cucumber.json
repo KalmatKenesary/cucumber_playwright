@@ -10,7 +10,8 @@
         "publishQuite": true,
         "dryRun": false,
         "require": [
-            "tests/steps/*.js"
+            "tests/steps/*.js",
+            "tests/support/*.js"
         ],
         "format": [
             "allure-cucumberjs/reporter"
