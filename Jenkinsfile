@@ -3,10 +3,12 @@ pipeline {
     stages {
         stage('Checkout') {
             checkout scm
+            steps {
+                echo "Selected env: ${ENV}"
+            }
         }
         stage('Build') { 
             steps {
-                echo "Selected env: ${ENV}"
                 bat 'npm i'
                 bat 'npx playwright install chromium'
             }
